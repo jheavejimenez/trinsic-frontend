@@ -8,7 +8,7 @@ const {
 
 // Credentials API
 const credentialsClient = new CredentialsServiceClient(
-    new Credentials(process.env.react_app_api_key),
+    new Credentials(process.env.REACT_APP_API_KEY),
     { noRetryPolicy: true }
 );
 
@@ -20,6 +20,8 @@ const providerClient = new ProviderServiceClient(
 
 // Wallet API
 const walletClient = new WalletServiceClient(
-    new Credentials(process.env.react_app_api_key),
+    new Credentials(process.env.REACT_APP_API_KEY),
     { noRetryPolicy: true }
 );
+
+export { providerClient, walletClient, credentialsClient };

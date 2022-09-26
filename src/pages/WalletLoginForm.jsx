@@ -13,20 +13,13 @@ import {
 } from '@chakra-ui/react';
 import React from "react";
 import {useNavigate} from "react-router-dom";
-import {passwordLessSignIn} from "../repository/user";
 
 function WalletLoginForm() {
     const [email, setEmail] = React.useState('');
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const sign = await passwordLessSignIn({email})
-
-        const url = window.location.href;
-        const queryString = url.split('?')[1];
-
-        navigate('/confirmation-code', {state: {data: sign, encodedData: queryString}});
+        navigate('/confirmation-code');
     };
 
 

@@ -15,7 +15,6 @@ import React from "react";
 // import {createUser} from "../utils/users";
 import {UserContext} from "../context/UserContext";
 import {useNavigate} from "react-router-dom";
-import {createUser} from "../repository/user";
 
 function SigninForm() {
     const [username, setUsername] = React.useState('');
@@ -23,10 +22,6 @@ function SigninForm() {
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const user = await createUser(username);
-        setUser(user);
-
         setUsername('');
 
         navigate('/request-certificate');

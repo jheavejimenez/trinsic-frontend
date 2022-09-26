@@ -3,7 +3,6 @@ import AuthContext from "../context/AuthProvider";
 import {Container, SimpleGrid} from '@chakra-ui/react';
 import Card from "../components/Card";
 import CertificateCardHolder from "../components/CertificateCardHolder";
-import {getApprovedCertificate} from "../repository/certificate";
 
 function Certificate() {
     const [certs, setCerts] = useState([]);
@@ -12,7 +11,6 @@ function Certificate() {
 
     useEffect(() => {
         async function fetchApprovedCerts(accessToken) {
-            const res = await getApprovedCertificate(accessToken)
             setCerts(res);
         }
         fetchApprovedCerts(accessToken)

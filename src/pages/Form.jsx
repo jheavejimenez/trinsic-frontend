@@ -14,8 +14,6 @@ import {
 import {useNavigate} from "react-router-dom";
 import React from "react";
 import {UserContext} from "../context/UserContext";
-import {createCertificate} from "../repository/certificate";
-import {passwordLessSignIn} from "../repository/user";
 
 function Form() {
     const {user} = React.useContext(UserContext);
@@ -27,15 +25,7 @@ function Form() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const sign = await passwordLessSignIn({email})
-        await createCertificate(
-            user.id,
-            firstName,
-            lastName,
-            email,
-            course,
-        )
-        navigate('/confirmation-code', {state: {data: sign}});
+        navigate('/confirmation-code');
         // navigate('/');
     };
 
