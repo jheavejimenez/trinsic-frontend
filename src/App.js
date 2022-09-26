@@ -10,7 +10,7 @@ import OTP from "./pages/OTP";
 import Form from "./pages/Form";
 import SigninForm from "./pages/SigninForm";
 import WalletLoginForm from "./pages/WalletLoginForm";
-import CreateSchema from "./pages/admin/CreateSchema";
+import SchemaDashboard from "./pages/admin/CreateSchema";
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
                         <Route path={"/wallet/login"} element={<WalletLoginForm/>}/>
                         <Route path={"/certificates"} element={<Certificate/>}/>
                         <Route path={"/admin"} element={<Admin/>}/>
-                        <Route path={"/admin/schema"} element= {<CreateSchema />}/>
+                        <Route path={"/admin/schema"} element= {<SchemaDashboard />}/>
                         </Routes>
                 </div>
             </DidContext.Provider>

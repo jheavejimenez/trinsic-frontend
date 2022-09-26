@@ -3,7 +3,7 @@ import { Box, Container, Flex, Heading, SimpleGrid, Spacer, Stack, Text } from "
 import CustomButton from "../../components/Button";
 import { credentialsClient } from "../../repository/apiConfig";
 
-function CreateSchema() {
+function SchemaDashboard() {
     const [schema, setSchema] = React.useState([]);
 
     async function getSchema() {
@@ -55,4 +55,4 @@ function CreateSchema() {
     )
 }
 
-export default CreateSchema;
+export default SchemaDashboard;
