@@ -7,9 +7,10 @@ function SchemaDashboard() {
     const [schema, setSchema] = React.useState([]);
 
     async function getSchema() {
-        let schemas = await credentialsClient.listSchemas();
-        setSchema(schemas);
-        return schemas;
+        let credentialDefinitions = await credentialsClient.listCredentialDefinitions();
+
+        setSchema(credentialDefinitions);
+        return credentialDefinitions;
     }
 
     useEffect(() => {
@@ -40,11 +41,11 @@ function SchemaDashboard() {
                                 >
                                     {schema.name}
                                 </Heading>
-                                <Text fontSize={'lg'} color={'gray.500'}>
-                                    {" Vituperatoribus utamur facilisi dicat cetero verear luptatum quaeque tota. " +
-                                        "Tristique ultricies ac saepe facilisi expetendis platea sagittis erroribus quidam." +
-                                        " Reque harum volumus volumus neglegentur movet penatibus."
-                                    }
+                                <Text fontSize={'md'} color={'gray.500'}>
+                                    {`Revocable: ${schema.supportsRevocation}`}
+                                </Text>
+                                <Text fontSize={'md'} color={'gray.500'}>
+                                    {`Schema ID: ${schema.schemaId}`}
                                 </Text>
                             </Stack>
                         </Stack>

@@ -10,7 +10,7 @@ import OTP from "./pages/OTP";
 import Form from "./pages/Form";
 import SigninForm from "./pages/SigninForm";
 import WalletLoginForm from "./pages/WalletLoginForm";
-import SchemaDashboard from "./pages/admin/CreateSchema";
+import SchemaDashboard from "./pages/admin/SchemaDashboard";
 
 
 function App() {
