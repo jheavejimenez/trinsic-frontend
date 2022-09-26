@@ -1,8 +1,8 @@
 import {Button, Flex, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useColorModeValue,} from "@chakra-ui/react";
 import React, {useEffect, useState} from "react";
-import {approveApplication, buildVC, getSumittedApplications} from "../repository/admin";
-import {schoolSchema} from "../repository/schemaVC";
-import {getUserDid} from "../repository/user";
+import {approveApplication, buildVC, getSumittedApplications} from "../../repository/admin";
+import {schoolSchema} from "../../repository/schemaVC";
+import {getUserDid} from "../../repository/user";
 
 function Admin() {
     const [certs, setCerts] = useState([]);

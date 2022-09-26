@@ -4,12 +4,13 @@ import NavigationBar from "./components/NavBar";
 import {UserContext} from "./context/UserContext";
 import {DidContext} from "./context/DidContext";
 import Dashboard from "./pages/Dashboard";
-import Admin from "./pages/Admin";
+import Admin from "./pages/admin/Admin";
 import Certificate from "./pages/Certificate";
 import OTP from "./pages/OTP";
 import Form from "./pages/Form";
 import SigninForm from "./pages/SigninForm";
 import WalletLoginForm from "./pages/WalletLoginForm";
+import CreateSchema from "./pages/admin/CreateSchema";
 
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
                         <Route path={"/wallet/login"} element={<WalletLoginForm/>}/>
                         <Route path={"/certificates"} element={<Certificate/>}/>
                         <Route path={"/admin"} element={<Admin/>}/>
-                    </Routes>
+                        <Route path={"/admin/schema"} element= {<CreateSchema />}/>
+                        </Routes>
                 </div>
             </DidContext.Provider>
         </UserContext.Provider>
