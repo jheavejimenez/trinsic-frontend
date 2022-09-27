@@ -9,6 +9,9 @@ const Links = {
     },
     Certificates: {
         href: "/certificates",
+    },
+    Schema: {
+        href: "/admin/schema",
     }
 }
 
