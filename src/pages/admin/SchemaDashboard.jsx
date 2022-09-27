@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Box, Center, Container, Flex, Heading, SimpleGrid, Spacer, Spinner, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, SimpleGrid, Spacer, Stack, Text } from "@chakra-ui/react";
 import CustomButton from "../../components/Button";
 import { credentialsClient } from "../../repository/apiConfig";
+import Loading from "../../components/Loading";
 
 function SchemaDashboard() {
     const [schema, setSchema] = useState([]);
@@ -22,15 +23,7 @@ function SchemaDashboard() {
         <>
             <Container maxW={'1280px'} marginTop={'10vh'}>
                 {loading ? (
-                    <Center>
-                        <Spinner
-                            thickness='4px'
-                            speed='0.65s'
-                            emptyColor='gray.200'
-                            color='blue.500'
-                            size='xl'
-                        />
-                    </Center>
+                    <Loading />
                 ) : (
                     <>
                         <Flex>
