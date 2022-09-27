@@ -1,32 +1,23 @@
-import React from "react";
-import {
-    Box,
-    Button,
-    Flex,
-    FormControl,
-    FormLabel,
-    Heading,
-    Input,
-    Link,
-    Stack,
-    Text,
-    useColorModeValue
-} from "@chakra-ui/react";
+import { Box, Button, Flex, FormControl, FormLabel, Input, Stack, useColorModeValue } from "@chakra-ui/react";
+import { useState } from "react";
 import { credentialsClient } from "../../repository/apiConfig";
+import { useNavigate } from "react-router-dom";
 
 function AddSchema() {
-    const [schemaName, setSchemaName] = React.useState('');
-    const [schemaVersion, setSchemaVersion] = React.useState('');
-    const [schemaAttributes, setSchemaAttributes] = React.useState([]);
+    const [schemaName, setSchemaName] = useState('');
+    const [schemaVersion, setSchemaVersion] = useState('');
+    const [schemaAttributes, setSchemaAttributes] = useState([]);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let schemaId = ({
+        let schemaId = await credentialsClient.createSchema({
             name: schemaName,
             version: schemaVersion,
-            attributeNames: [...schemaAttributes]
+            attributeNames: [schemaAttributes]
         });
         console.log(schemaId);
+        navigate('/admin/schema');
     }
 
     return (
@@ -60,7 +51,7 @@ function AddSchema() {
                                 <FormLabel>Schema Attributes</FormLabel>
                                 <Input
                                     autoComplete={"off"}
-                                    placeholder='Schema Attributes'
+                                    placeholder='Attribute A, Attribute B'
                                     value={schemaAttributes}
                                     onChange={(e) => setSchemaAttributes(e.target.value)}
                                 />

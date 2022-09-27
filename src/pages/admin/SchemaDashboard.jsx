@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Box, Center, Container, Flex, Heading, SimpleGrid, Spacer, Spinner, Stack, Text } from "@chakra-ui/react";
 import CustomButton from "../../components/Button";
 import { credentialsClient } from "../../repository/apiConfig";
 
 function SchemaDashboard() {
-    const [schema, setSchema] = React.useState([]);
-    const [loading, setLoading] = React.useState(true);
+    const [schema, setSchema] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     async function getSchema() {
         let credentialDefinitions = await credentialsClient.listCredentialDefinitions();
