@@ -12,8 +12,8 @@ import {
 } from '@chakra-ui/react';
 import React, { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
-import AuthContext from "../context/AuthProvider";
+import { UserContext } from "../../context/UserContext";
+import AuthContext from "../../context/AuthProvider";
 
 function OTP() {
     const [confirmationCode, setConfirmationCode] = React.useState('');

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import AuthContext from "../context/AuthProvider";
+import AuthContext from "../../context/AuthProvider";
 import {Container, SimpleGrid} from '@chakra-ui/react';
-import Card from "../components/Card";
-import CertificateCardHolder from "../components/CertificateCardHolder";
+import Card from "../../components/Card";
+import CertificateCardHolder from "../../components/CertificateCardHolder";
 
 function Certificate() {
     const [certs, setCerts] = useState([]);

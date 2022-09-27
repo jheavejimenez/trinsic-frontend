@@ -1,6 +1,6 @@
 import {Box, Container, Flex, Heading, List, ListItem, Spacer,} from '@chakra-ui/react';
-import CustomButton from "../components/Button";
-import {UserContext} from "../context/UserContext";
+import CustomButton from "../../components/Button";
+import {UserContext} from "../../context/UserContext";
 import {useContext, useEffect, useState} from "react";
 
 function Dashboard() {
