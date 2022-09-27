@@ -7,17 +7,21 @@ function AddSchema() {
     const [schemaName, setSchemaName] = useState('');
     const [schemaVersion, setSchemaVersion] = useState('');
     const [schemaAttributes, setSchemaAttributes] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let schemaId = await credentialsClient.createSchema({
+        let credentialDefinition = await credentialsClient.createCredentialDefinition({
             name: schemaName,
             version: schemaVersion,
-            attributeNames: [schemaAttributes]
+            attributes: [schemaAttributes],
+            supportRevocation: true, // Enable revocation at a later date
+            tag: "Default" // Tag to identify the schema
         });
-        console.log(schemaId);
-        navigate('/admin/schema');
+        console.log(credentialDefinition);
+        // navigate('/admin/schema');
     }
 
     return (
