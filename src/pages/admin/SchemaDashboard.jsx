@@ -28,7 +28,7 @@ function SchemaDashboard() {
                     <>
                         <Flex>
                             <Spacer />
-                            <Box>
+                            <Box pb={"5"}>
                                 <CustomButton title={"Add Schema"} path={"/admin/add-schema"} />
                             </Box>
                         </Flex>
