@@ -1,6 +1,6 @@
 import { Box, Button, Flex, FormControl, FormLabel, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
-import { credentialsClient } from "../../repository/apiConfig";
+import { credentialsClient } from "../../repository/trinsicConfigs";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
 

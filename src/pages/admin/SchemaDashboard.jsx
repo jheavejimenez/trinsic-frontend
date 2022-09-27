@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Box, Container, Flex, Heading, SimpleGrid, Spacer, Stack, Text } from "@chakra-ui/react";
 import CustomButton from "../../components/Button";
-import { credentialsClient } from "../../repository/apiConfig";
+import { credentialsClient } from "../../repository/trinsicConfigs";
 import Loading from "../../components/Loading";
 
 function SchemaDashboard() {
