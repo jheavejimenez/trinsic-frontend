@@ -83,3 +83,5 @@ function AddSchema() {
         </Flex>
     );
 }
+
+export default AddSchema;
