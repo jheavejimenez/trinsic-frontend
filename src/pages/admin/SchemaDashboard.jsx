@@ -36,7 +36,7 @@ function SchemaDashboard() {
                         <Flex>
                             <Spacer />
                             <Box>
-                                <CustomButton title={"Add Schema"} path={"/add-schema"} />
+                                <CustomButton title={"Add Schema"} path={"/admin/add-schema"} />
                             </Box>
                         </Flex>
                         <SimpleGrid columns={3} spacing={5}>
