@@ -11,7 +11,7 @@ function Certificate() {
 
     useEffect(() => {
         async function fetchApprovedCerts(accessToken) {
-            setCerts(res);
+            setCerts("hello");
         }
         fetchApprovedCerts(accessToken)
         let interval = setInterval(async () => {
