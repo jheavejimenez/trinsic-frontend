@@ -14,14 +14,17 @@ import {
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../repository/admin";
+import { UserContext } from "../../context/UserContext";
 
 function SigninForm() {
     const [email, setEmail] = React.useState('');
+    const {setUser} = React.useContext(UserContext);
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await createUser(email); // this call also email the user for connections invitation
+        const userEmail = await createUser(email); // this call also email the user for connections invitation
+        setUser(userEmail);
         setEmail('');
         navigate('/request-certificate');
     };

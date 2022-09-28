@@ -20,12 +20,10 @@ function Form() {
     const navigate = useNavigate();
     const [firstName, setFirstName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
-    const [email, setEmail] = React.useState('');
     const [course, setCourse] = React.useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        navigate('/confirmation-code');
         // navigate('/');
     };
 
@@ -66,9 +64,9 @@ function Form() {
                                 <FormLabel>Email Address</FormLabel>
                                 <Input
                                     id='email'
+                                    disabled={true}
                                     placeholder='Email Address'
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={user.email}
                                 />
                                 <FormLabel>Course</FormLabel>
                                 <Input
