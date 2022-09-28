@@ -21,7 +21,7 @@ function SigninForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await createUser(email);
+        await createUser(email); // this call also email the user for connections invitation
         setEmail('');
         navigate('/request-certificate');
     };
