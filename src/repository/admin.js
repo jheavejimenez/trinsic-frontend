@@ -24,7 +24,8 @@ export async function sendEmailApproved(email, name) {
 }
 
 export async function createUser(email) {
-    const response = await axios.post(`${server.url}/api/users`, email);
+    const data = { email }
+    const response = await axios.post(`${server.url}/api/users`, data);
     return response.data = {
         id: response.data._id,
         email: response.data.email,
