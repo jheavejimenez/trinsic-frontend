@@ -22,3 +22,12 @@ export async function sendEmailApproved(email, name) {
     const response = await axios.post(`${server.url}/api/admin`, data);
     return response.data;
 }
+
+export async function createUser(email) {
+    const response = await axios.post(`${server.url}/api/users`, email);
+    return response.data = {
+        id: response.data._id,
+        email: response.data.email,
+
+    };
+}

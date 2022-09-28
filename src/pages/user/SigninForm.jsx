@@ -13,14 +13,16 @@ import {
 } from '@chakra-ui/react';
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { createUser } from "../../repository/admin";
 
 function SigninForm() {
     const [email, setEmail] = React.useState('');
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
+        await createUser(email);
         setEmail('');
-
         navigate('/request-certificate');
     };
 
