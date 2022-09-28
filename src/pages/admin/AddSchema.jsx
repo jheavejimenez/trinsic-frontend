@@ -2,7 +2,7 @@ import { Box, Button, Flex, FormControl, FormLabel, Input, Stack } from "@chakra
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
-import { getSchemaDefinitions } from "../../repository/admin";
+import { createSchemaDefinition } from "../../repository/admin";
 
 function AddSchema() {
     const [schemaName, setSchemaName] = useState('');
@@ -17,7 +17,7 @@ function AddSchema() {
         try {
             setLoading(true);
 
-            await getSchemaDefinitions(
+            await createSchemaDefinition(
                 schemaName,
                 schemaVersion,
                 schemaAttributes.split(',').map((attribute) => attribute.trim())
