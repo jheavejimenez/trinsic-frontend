@@ -16,14 +16,7 @@ function AddSchema() {
         e.preventDefault();
         try {
             setLoading(true);
-            let credentialDefinition = await credentialsClient.createCredentialDefinition({
-                name: schemaName,
-                version: schemaVersion,
-                attributes: schemaAttributes.split(',').map((attribute) => attribute.trim()), // split by comma and remove spaces
-                supportRevocation: true, // Enable revocation at a later date
-                tag: "Default" // Tag to identify the schema
-            });
-            console.log(credentialDefinition);
+
             setLoading(false);
             navigate('/admin/schema');
         } catch (error) {

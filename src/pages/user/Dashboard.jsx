@@ -9,7 +9,7 @@ function Dashboard() {
 
     useEffect(() => {
         async function fetchApplications() {
-            setMyApplications("hello");
+            setMyApplications("hello, hi");
         }
 
         fetchApplications()
