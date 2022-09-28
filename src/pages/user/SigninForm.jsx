@@ -12,17 +12,14 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import React from "react";
-// import {createUser} from "../utils/users";
-import {UserContext} from "../../context/UserContext";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SigninForm() {
-    const [username, setUsername] = React.useState('');
-    const {setUser} = React.useContext(UserContext);
+    const [email, setEmail] = React.useState('');
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        setUsername('');
+        setEmail('');
 
         navigate('/request-certificate');
     };
@@ -48,13 +45,13 @@ function SigninForm() {
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={4}>
                             <FormControl>
-                                <FormLabel>Username</FormLabel>
+                                <FormLabel>Email</FormLabel>
                                 <Input
-                                    id='username'
+                                    id='email'
                                     autoComplete={"off"}
-                                    placeholder='Username'
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
+                                    placeholder='Email'
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
 
                             </FormControl>
