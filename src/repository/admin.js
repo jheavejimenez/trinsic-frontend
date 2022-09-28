@@ -32,3 +32,16 @@ export async function createUser(email) {
 
     };
 }
+
+export async function createCertificate(
+    user,
+    firstName,
+    lastName,
+    email,
+    course
+) {
+    const data = {user, firstName, lastName, email, course, isApprove: false};
+
+    return await axios.post(`${server.url}/api/certificates`, data);
+}
+

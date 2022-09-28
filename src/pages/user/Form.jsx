@@ -14,6 +14,8 @@ import {
 import {useNavigate} from "react-router-dom";
 import React from "react";
 import {UserContext} from "../../context/UserContext";
+import { createCertificate } from "../../repository/admin";
+
 
 function Form() {
     const {user} = React.useContext(UserContext);
@@ -24,6 +26,13 @@ function Form() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        await createCertificate(
+            user.id,
+            firstName,
+            lastName,
+            user.email,
+            course,
+        )
         // navigate('/');
     };
 
