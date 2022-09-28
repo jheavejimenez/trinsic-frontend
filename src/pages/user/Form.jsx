@@ -30,7 +30,6 @@ function Form() {
             user.id,
             firstName,
             lastName,
-            user.email,
             course,
         )
         // navigate('/');
@@ -69,13 +68,6 @@ function Form() {
                                     placeholder='Last name'
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
-                                />
-                                <FormLabel>Email Address</FormLabel>
-                                <Input
-                                    id='email'
-                                    disabled={true}
-                                    placeholder='Email Address'
-                                    value={user.email}
                                 />
                                 <FormLabel>Course</FormLabel>
                                 <Input
