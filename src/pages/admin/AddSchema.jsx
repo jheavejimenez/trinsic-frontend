@@ -1,8 +1,8 @@
 import { Box, Button, Flex, FormControl, FormLabel, Input, Stack } from "@chakra-ui/react";
 import { useState } from "react";
-import { credentialsClient } from "../../repository/trinsicConfigs";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
+import { getSchemaDefinitions } from "../../repository/admin";
 
 function AddSchema() {
     const [schemaName, setSchemaName] = useState('');
@@ -16,6 +16,12 @@ function AddSchema() {
         e.preventDefault();
         try {
             setLoading(true);
+
+            await getSchemaDefinitions(
+                schemaName,
+                schemaVersion,
+                schemaAttributes.split(',').map((attribute) => attribute.trim())
+            )
 
             setLoading(false);
             navigate('/admin/schema');
