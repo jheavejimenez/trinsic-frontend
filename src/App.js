@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavBar";
 import { UserContext } from "./context/UserContext";
 import { DidContext } from "./context/DidContext";
-import Dashboard from "./pages/user/Dashboard";
+import Dashboard from "./pages/admin/Dashboard";
 import Admin from "./pages/admin/Admin";
 import Certificate from "./pages/user/Certificate";
 import OTP from "./pages/user/OTP";
