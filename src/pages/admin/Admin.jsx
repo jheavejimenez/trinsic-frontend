@@ -23,15 +23,14 @@ function Admin() {
     const handleApprove = async (cert) => {
         const isApprove = true;
 
-        // await approveApplication(
-        //     cert._id,
-        //     cert.firstName,
-        //     cert.lastName,
-        //     cert.email,
-        //     cert.course,
-        //     isApprove,
-        // )
-        console.log(cert._id)
+        await approveApplication(
+            cert._id,
+            cert.firstName,
+            cert.lastName,
+            cert.email,
+            cert.course,
+            isApprove,
+        )
     }
 
 
