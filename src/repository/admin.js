@@ -24,10 +24,23 @@ export async function sendEmailApproved(email, name) {
 }
 
 export async function getSumittedApplications() {
-    const response = await axios.get(`${server.url}/api/approver`);
+    const response = await axios.get(`${server.url}/api/admin`);
     return response.data;
 }
 
+export async function approveApplication(
+    id,
+    firstName,
+    lastName,
+    email,
+    course,
+    isApprove,
+) {
+    const data = {firstName, lastName, email, course, isApprove};
+    console.log(data);
+
+    return await axios.put(`${server.url}/api/admin/${id}`, data);
+}
 
 export async function createUser(email) {
     const data = { email }

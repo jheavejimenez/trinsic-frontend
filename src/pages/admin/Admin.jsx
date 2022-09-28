@@ -1,6 +1,6 @@
 import { Button, Flex, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useColorModeValue, } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { getSumittedApplications } from "../../repository/admin";
+import { getSumittedApplications, approveApplication } from "../../repository/admin";
 
 function Admin() {
     const [certs, setCerts] = useState([]);
@@ -23,14 +23,15 @@ function Admin() {
     const handleApprove = async (cert) => {
         const isApprove = true;
 
-        await approveApplication(
-            cert._id,
-            cert.firstName,
-            cert.lastName,
-            cert.email,
-            cert.course,
-            isApprove,
-        )
+        // await approveApplication(
+        //     cert._id,
+        //     cert.firstName,
+        //     cert.lastName,
+        //     cert.email,
+        //     cert.course,
+        //     isApprove,
+        // )
+        console.log(cert._id)
     }
 
 
@@ -47,6 +48,7 @@ function Admin() {
                         <Tr>
                             <Th>First Name</Th>
                             <Th>Last Name</Th>
+                            <Th>Email</Th>
                             <Th>Course</Th>
                             <Th>Action</Th>
                         </Tr>
@@ -56,9 +58,11 @@ function Admin() {
                             <Tr key={cert._id}>
                                 <Td>{cert.firstName}</Td>
                                 <Td>{cert.lastName}</Td>
+                                <Td>{cert.email}</Td>
                                 <Td>{cert.course}</Td>
                                 <Td>
                                     <Button
+                                        onClick={() => handleApprove(cert)}
                                         bg={'blue.400'}
                                         color={'white'}
                                         _hover={{
