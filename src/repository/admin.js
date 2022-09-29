@@ -42,6 +42,18 @@ export async function approveApplication(
     return await axios.put(`${server.url}/api/admin/${id}`, data);
 }
 
+export async function getApplications(id) {
+    if (!id) {
+        return [{
+            "_id": "123",
+            "error": "No Applications",
+        }];
+    }
+    const response = await axios.get(`${server.url}/api/certificates/dashboard/${id}`);
+    return response.data;
+}
+
+
 export async function createUser(email) {
     const data = { email }
     const response = await axios.post(`${server.url}/api/users`, data);

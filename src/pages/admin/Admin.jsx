@@ -31,6 +31,7 @@ function Admin() {
             cert.course,
             isApprove,
         )
+        console.log(cert._id)
     }
 
 

@@ -2,6 +2,7 @@ import {Box, Container, Flex, Heading, List, ListItem, Spacer,} from '@chakra-ui
 import CustomButton from "../../components/Button";
 import {UserContext} from "../../context/UserContext";
 import {useContext, useEffect, useState} from "react";
+import { getApplications, getSumittedApplications } from "../../repository/admin";
 
 function Dashboard() {
     const {user} = useContext(UserContext);
@@ -9,7 +10,8 @@ function Dashboard() {
 
     useEffect(() => {
         async function fetchApplications() {
-            setMyApplications("hello, hi");
+            const res = await getApplications(user.id)
+            setMyApplications(res);
         }
 
         fetchApplications()
@@ -22,6 +24,7 @@ function Dashboard() {
         };
 
     }, [])
+
 
     return (
         <>
@@ -93,7 +96,6 @@ function Dashboard() {
                 </List>
             </Container>
         </>
-
     );
 }
 
